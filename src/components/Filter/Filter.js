@@ -8,9 +8,7 @@ export function Filter({ value, onChange }) {
          <input className={styles.input} value={value} onChange={ onChange} />
        </>
   )
-}
-
-
+};
 Filter.propType = {
   onChange: PropTypes.func,
   value: PropTypes.string,

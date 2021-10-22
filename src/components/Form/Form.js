@@ -1,70 +1,64 @@
-import React from "react";
+import {useState} from "react";
 import { v4 as uuid } from "uuid";
 import styles from "./form.module.css";
 
-export class Form extends React.Component {
-  nameId = uuid();
-  nameInputId = uuid();
-  numberInputId = uuid();
-  contactId = uuid();
+export function Form(props) {
+  const nameInputId = uuid();
+  const numberInputId = uuid();
+  
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
-  state = {
-    name: "",
-    number: "",
+const handleChangeName = (e) => {    
+   setName( e.target.value );
   };
-  handleChange = (e) => {    
-    this.setState({ [e.target.name]: e.target.value });
+  
+  const handleChangeNumber = (e) => {    
+   setNumber( e.target.value );
   };
-  handleSubmit = (e) => {
+
+const handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state);
-    this.reset();
+  props.onSubmit({ name, number });
+  setName('');
+  setNumber('');
   };
-
-  reset = () => {
-    this.setState({
-      name: "",
-      number: "",
-    });
-  };
-
-  render() {
-    return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <label className={styles.label} htmlFor={this.nameInputId}>
+  return (
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <label className={styles.label} htmlFor={nameInputId}>
           Name
         </label>
         <input
           className={styles.input}
           type="text"
           name="name"
-          value={this.state.name}
-          id={this.nameInputId}
+          value={name}
+          id={nameInputId}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title=""
           required
-          onChange={this.handleChange}
+          onChange={handleChangeName}
         />
-        <label className={styles.label} htmlFor={this.numberInputId}>
-          {" "}
+        <label className={styles.label} htmlFor={numberInputId}>        
           Number
         </label>
         <input
           className={styles.input}
           type="tel"
           name="number"
-          value={this.state.number}
-          id={this.numberInputId}
+          value={number}
+          id={numberInputId}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title=""
           required
-          onChange={this.handleChange}
+          onChange={handleChangeNumber}
         />
         <button className={styles.submitBtn} type="submit">
           Add contact
         </button>
       </form>
     );
-  }
 }
+
+
