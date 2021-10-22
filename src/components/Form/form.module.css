@@ -1,0 +1,75 @@
+.label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 15px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(0, 0, 0, 0.603);
+}
+.input {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 15px;
+  width: 70%;
+  height: 35px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(78, 77, 71, 0.739);
+}
+.form {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  border: 1px solid rgba(78, 77, 71, 0.739);
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  padding-bottom: 25px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.submitBtn {
+  width: 200px;
+  height: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  background-color: rgb(245, 236, 115);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  border: none;
+  line-height: 15px;
+  color: rgba(51, 28, 25, 0.513);
+  cursor: pointer;
+  border-radius: 4px;
+
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(245, 236, 115);
+  background-color: rgba(51, 28, 25, 0.267);
+}
+.submitBtn:hover {
+  border-radius: 4px;
+
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(245, 236, 115);
+  background-color: rgba(51, 28, 25, 0.541);
+  color: rgba(51, 28, 25, 0.513);
+  -webkit-box-shadow: 12px 12px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 12px 12px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 12px 12px 8px 0px rgba(34, 60, 80, 0.2);
+}
