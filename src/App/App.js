@@ -48,13 +48,16 @@ function App() {
   useEffect(() => {
     const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
     if (parsedContacts) {
-      setContacts(contacts);
+      setContacts(parsedContacts);
     }
-  }, [contacts]);
-
+  }, []);
+  
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  const contactsJson = JSON.stringify(contacts);
+  if (contactsJson) {
+    localStorage.setItem('contacts', contactsJson);
+  }
+}, [contacts]);
 
   return (
       <div className="phonebook">
